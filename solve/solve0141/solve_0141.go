@@ -23,7 +23,26 @@ type ListNode struct {
 	Next *ListNode
 }
 
+// hasCycle 快慢指针方案
 func hasCycle(head *ListNode) bool {
-
-	return true
+	if head == nil {
+		return false
+	}
+	cur := head
+	fastCur := head.Next
+	for cur != nil && fastCur != nil {
+		if cur == nil || fastCur == nil {
+			return false
+		}
+		if cur == fastCur {
+			return true
+		}
+		cur = cur.Next
+		fastCur = fastCur.Next
+		if fastCur == nil {
+			return false
+		}
+		fastCur = fastCur.Next
+	}
+	return false
 }

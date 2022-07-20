@@ -11,5 +11,20 @@ package solve0169
  */
 
 func majorityElement(nums []int) int {
-
+	length := len(nums)
+	if length == 1 {
+		return nums[0]
+	}
+	countMap := make(map[int]int)
+	for _, num := range nums {
+		if v, ok := countMap[num]; ok {
+			if v+1 > length/2 {
+				return num
+			}
+			countMap[num] = v + 1
+		} else {
+			countMap[num] = 1
+		}
+	}
+	panic("data err")
 }

@@ -1,7 +1,11 @@
 # code record
 获取题目命令 leetcode-tool new --lang go 1 
 --lang go 可以通过.leetcode.json文件省略
+
+```shell
 leetcode-tool new  1
+```
+
 
 
 
